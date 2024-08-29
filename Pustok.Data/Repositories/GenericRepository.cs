@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Pustok.Data.Repositories
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity,new()
     {
         private readonly AppDbContext context;
 
@@ -47,14 +47,23 @@ namespace Pustok.Data.Repositories
             return await query.Where(expression).FirstOrDefaultAsync();
         }
 
-        public async Task<IQueryable<TEntity>> GetAll(Expression<Func<TEntity,bool>> expression, params string[] includes)
+        public async Task<IQueryable<TEntity>> GetAll(Expression<Func<TEntity,bool>>? expression, params string[]? includes)
         {
             IQueryable<TEntity> query = entities.AsQueryable();
-            foreach (var item in includes)
+            if(includes is not null)
             {
-                query = query.Include(item);
+                foreach (var item in includes)
+                {
+                    query = query.Include(item);
+                }
             }
-            query = query.Where(expression);
+           
+            if(expression is not null)
+            {
+                query = query.Where(expression);
+
+            }
+            
             return query;
            
         }

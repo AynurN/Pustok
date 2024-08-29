@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pustok.Core.IRepositories
 {
-    public interface IGenreRepository :IGenericRepository<Genre>
+    public interface IGenreRepository :IGenericRepository<Genre> 
     {
     }
 }

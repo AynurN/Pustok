@@ -1,17 +1,19 @@
-﻿  <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Tables</h1>
-<p class="mb-4">
-    DataTables is a third party plugin that is used to generate the demo table below.
-    For more information about DataTables, please visit the <a target="_blank"
-                                                               href="https://datatables.net">official DataTables documentation</a>.
-</p>
+﻿ @model List<Genre>
+@{
+    int num = 0;
+}
 
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Tables</h1>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    <div class="card-header py-3 d-flex" style="justify-content:space-between">
+        <h6 class="m-0 font-weight-bold text-primary">Genre list</h6>
+        <a href="genre/create" class="btn btn-success">Create</a>
+
     </div>
     <div class="card-body">
+
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -20,23 +22,27 @@
                         <th>Name</th>
                         <th>Actions</th>
                     </tr>
-                </thea
+                </thead>
                 <tbody>
-                    
-                  
-                    <tr>
-                        <td>Donna Snider</td>
-                        <td>$112,000</td>
-                    </tr>
+
+                    @foreach (Genre genre in Model)
+                    {
+                        <tr>
+                            <td> @num++</td>
+                            <td>@genre.Name</td>
+                            <td>
+                                <a class="btn btn-primary" asp-action="update" asp-route-id="@genre.Id">Update</a>
+                                <a class="btn btn-danger" asp-action="delete" asp-route-id="@genre.Id">Delete</a>
+
+                            </td>
+                        </tr>
+                    }
+
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
-                </div>
-<!-- /.container-fluid -->
-           
-<!-- End of Main Content -->
-     
-<!-- End of Content Wrapper -->
+
+

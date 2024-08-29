@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Pustok.Core.IRepositories;
 using Pustok.Data.DAL;
+using Pustok.Data.Repositories;
 using System;
 
 namespace Pustok.MVC
@@ -13,7 +15,7 @@ namespace Pustok.MVC
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-
+            builder.Services.AddScoped<IGenreRepository, GenreRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

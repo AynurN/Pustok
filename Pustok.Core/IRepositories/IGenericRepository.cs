@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Pustok.Core.IRepositories
 {
-    public interface IGenericRepository<TEntity> where TEntity : BaseEntity
+    public interface IGenericRepository<TEntity> where TEntity : BaseEntity, new()
     {
 
         public DbSet<TEntity> entities { get;}
@@ -18,7 +18,7 @@ namespace Pustok.Core.IRepositories
         public Task<int> CommitAsync();
         public Task<TEntity> GetById(int id, params string[] includes);
         public Task<TEntity> Get(Expression<Func<TEntity,bool>> expression, params string[] includes);   
-        public Task<IQueryable<TEntity>> GetAll(Expression<Func<TEntity,bool>> expression, params string[] includes);   
+        public Task<IQueryable<TEntity>> GetAll(Expression<Func<TEntity,bool>>? expression, params string[]? includes);   
 
     }
 }

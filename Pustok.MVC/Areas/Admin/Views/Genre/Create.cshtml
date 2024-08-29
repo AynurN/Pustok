@@ -1,0 +1,11 @@
+﻿@model GenreCreateVM
+<form method="post">
+ 
+        <div class="mb-3">
+            <label for="Name" method="post">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
