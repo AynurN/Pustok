@@ -17,7 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pustok.Business\Pustok.Business.csproj" />
     <ProjectReference Include="..\Pustok.Data\Pustok.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\ViewComponents\" />
   </ItemGroup>
 
 </Project>

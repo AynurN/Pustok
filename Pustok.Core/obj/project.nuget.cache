@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c4ydtNueo4XqGdYkD+YzwMj+HffflKhPX0yi9970OyloBQkCBPVz/8sdCeQ9wcdmsgBc3azM7PAxE6e1cCCD3g==",
+  "dgSpecHash": "q6fAqEcL7Mc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\PB201-all\\MVC-all\\Pustok\\Pustok.Core\\Pustok.Core.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Pustok\\Pustok.Core\\Pustok.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.8\\microsoft.entityframeworkcore.8.0.8.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.8\\microsoft.entityframeworkcore.abstractions.8.0.8.nupkg.sha512",

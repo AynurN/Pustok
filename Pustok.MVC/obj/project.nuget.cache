@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4dKtHqmHtz2a6iLD52Fi5hQEYEqP1jzUCdedk2vc3GVsZmJAToXbBiAHULglbqpTeMIUDWnQHQ1NclWlIXmIlg==",
+  "dgSpecHash": "YeEzpkShueg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\PB201-all\\MVC-all\\Pustok\\Pustok.MVC\\Pustok.MVC.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Pustok\\Pustok.MVC\\Pustok.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

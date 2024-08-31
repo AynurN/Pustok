@@ -2733,6 +2733,16 @@
           }
         }
       },
+      "Pustok.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Pustok.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pustok.Business.dll": {}
+        }
+      },
       "Pustok.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -7833,6 +7843,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Pustok.Business/1.0.0": {
+      "type": "project",
+      "path": "../Pustok.Business/Pustok.Business.csproj",
+      "msbuildProject": "../Pustok.Business/Pustok.Business.csproj"
+    },
     "Pustok.Core/1.0.0": {
       "type": "project",
       "path": "../Pustok.Core/Pustok.Core.csproj",
@@ -7850,23 +7865,29 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.8",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.4",
+      "Pustok.Business >= 1.0.0",
       "Pustok.Data >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\PB201-all\\MVC-all\\Pustok\\Pustok.MVC\\Pustok.MVC.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\Pustok\\Pustok.MVC\\Pustok.MVC.csproj",
       "projectName": "Pustok.MVC",
-      "projectPath": "C:\\Users\\user\\Desktop\\PB201-all\\MVC-all\\Pustok\\Pustok.MVC\\Pustok.MVC.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\Pustok\\Pustok.MVC\\Pustok.MVC.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\PB201-all\\MVC-all\\Pustok\\Pustok.MVC\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\Pustok\\Pustok.MVC\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7874,14 +7895,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user\\Desktop\\PB201-all\\MVC-all\\Pustok\\Pustok.Data\\Pustok.Data.csproj": {
-              "projectPath": "C:\\Users\\user\\Desktop\\PB201-all\\MVC-all\\Pustok\\Pustok.Data\\Pustok.Data.csproj"
+            "C:\\Users\\user\\Desktop\\Pustok\\Pustok.Business\\Pustok.Business.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\Pustok\\Pustok.Business\\Pustok.Business.csproj"
+            },
+            "C:\\Users\\user\\Desktop\\Pustok\\Pustok.Data\\Pustok.Data.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\Pustok\\Pustok.Data\\Pustok.Data.csproj"
             }
           }
         }
@@ -7939,7 +7964,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

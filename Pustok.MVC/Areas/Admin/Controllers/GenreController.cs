@@ -2,7 +2,7 @@
 using Pustok.Core.IRepositories;
 using Pustok.Core.Models;
 using Microsoft.EntityFrameworkCore;
-using Pustok.MVC.Areas.Admin.ViewComponents.Genre;
+using Pustok.Business.ViewModels.Genre;
 
 namespace Pustok.MVC.Areas.Admin.Controllers
 {
