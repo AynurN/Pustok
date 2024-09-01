@@ -72,6 +72,9 @@ namespace Pustok.Data.Migrations
                     b.Property<int>("DisPercent")
                         .HasColumnType("int");
 
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -91,6 +94,8 @@ namespace Pustok.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
+
+                    b.HasIndex("GenreId");
 
                     b.ToTable("Books");
                 });
@@ -197,7 +202,15 @@ namespace Pustok.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Pustok.Core.Models.Genre", "Genre")
+                        .WithMany("Books")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Author");
+
+                    b.Navigation("Genre");
                 });
 
             modelBuilder.Entity("Pustok.Core.Models.BookImage", b =>
@@ -219,6 +232,11 @@ namespace Pustok.Data.Migrations
             modelBuilder.Entity("Pustok.Core.Models.Book", b =>
                 {
                     b.Navigation("BookImages");
+                });
+
+            modelBuilder.Entity("Pustok.Core.Models.Genre", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

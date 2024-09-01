@@ -21,6 +21,8 @@ namespace Pustok.Business.ViewModels.Book
         public IFormFile MainPhoto { get; set; }
         public IFormFile HoverPhoto { get; set; }
         public ICollection<IFormFile>? Photos { get; set; }
+        public ICollection<Pustok.Core.Models.Genre>? Genres { get; set; }
+        public ICollection<Pustok.Core.Models.Author>? Authors { get; set; }
 
 
     }

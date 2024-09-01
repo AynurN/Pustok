@@ -515,3 +515,4 @@ C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\Pustok.MVC.genruntimeco
 C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\ref\Pustok.MVC.dll
 C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Pustok.Business.dll
 C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Pustok.Business.pdb
+C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\FluentAssertions.dll
