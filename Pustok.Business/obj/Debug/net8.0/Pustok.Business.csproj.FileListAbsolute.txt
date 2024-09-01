@@ -22,3 +22,7 @@ C:\Users\user\Desktop\Pustok\Pustok.Business\obj\Debug\net8.0\Pustok.Business.dl
 C:\Users\user\Desktop\Pustok\Pustok.Business\obj\Debug\net8.0\refint\Pustok.Business.dll
 C:\Users\user\Desktop\Pustok\Pustok.Business\obj\Debug\net8.0\Pustok.Business.pdb
 C:\Users\user\Desktop\Pustok\Pustok.Business\obj\Debug\net8.0\ref\Pustok.Business.dll
+C:\Users\user\Desktop\Pustok\Pustok.Business\bin\Debug\net8.0\Pustok.Core.dll
+C:\Users\user\Desktop\Pustok\Pustok.Business\bin\Debug\net8.0\Pustok.Core.pdb
+C:\Users\user\Desktop\Pustok\Pustok.Business\obj\Debug\net8.0\Pustok.Business.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Pustok\Pustok.Business\obj\Debug\net8.0\Pustok.B.602EBFFE.Up2Date

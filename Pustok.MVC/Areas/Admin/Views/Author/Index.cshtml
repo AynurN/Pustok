@@ -1,0 +1,47 @@
+﻿@model List<Author>
+@{
+    int num = 0;
+}
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Tables</h1>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex" style="justify-content:space-between">
+        <h6 class="m-0 font-weight-bold text-primary">Genre list</h6>
+        <a asp-action="create" class="btn btn-success">Create</a>
+
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (Author author in Model)
+                    {
+                        ++num;
+                        <tr>
+                            <td> @num</td>
+                            <td>@author.Name</td>
+                            <td>
+                                <a class="btn btn-primary" asp-action="update" asp-route-id="@author.Id">Update</a>
+                                <a class="btn btn-danger" asp-action="delete" asp-route-id="@author.Id">Delete</a>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

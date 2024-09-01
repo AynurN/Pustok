@@ -32,7 +32,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\user\\Desktop\\Pustok\\Pustok.Core\\Pustok.Core.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\Pustok\\Pustok.Core\\Pustok.Core.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -49,6 +53,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

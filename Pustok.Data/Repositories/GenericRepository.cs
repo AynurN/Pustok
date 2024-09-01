@@ -64,7 +64,7 @@ namespace Pustok.Data.Repositories
 
             }
             
-            return query;
+            return  query;
            
         }
 

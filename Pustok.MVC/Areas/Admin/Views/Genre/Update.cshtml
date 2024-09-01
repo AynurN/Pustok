@@ -1,0 +1,12 @@
+﻿@model GenreUpdateVM
+<form method="post">
+
+    <div class="mb-3">
+        <label for="Name" method="post">Name</label>
+        <input asp-for="Name" class="form-control" placeholder="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <span asp-validation-summary="ModelOnly" class="text-danger"></span>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
