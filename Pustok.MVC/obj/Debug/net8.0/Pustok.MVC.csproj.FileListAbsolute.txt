@@ -504,7 +504,6 @@ C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\staticwebassets\msbuild
 C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Pustok.MVC.props
 C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Pustok.MVC.props
 C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\scopedcss\bundle\Pustok.MVC.styles.css
 C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\scopedcss\projectbundle\Pustok.MVC.bundle.scp.css
 C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\Pustok.MVC.csproj.Up2Date
@@ -516,3 +515,4 @@ C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\ref\Pustok.MVC.dll
 C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Pustok.Business.dll
 C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Pustok.Business.pdb
 C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\FluentAssertions.dll
+C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\scopedcss\Views\Shared\ProductPartialView.cshtml.rz.scp.css

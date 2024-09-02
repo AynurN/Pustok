@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0F709CDF-0EC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CB81D73E-CAC9-4E76-97D8-18D177245593}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pustok.Core", "Pustok.Core\Pustok.Core.csproj", "{DCEAB8A6-B779-448F-AB68-4D0431B5FC79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pustok.Core", "Pustok.Core\Pustok.Core.csproj", "{DCEAB8A6-B779-448F-AB68-4D0431B5FC79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pustok.Data", "Pustok.Data\Pustok.Data.csproj", "{DB238F78-768F-4AC1-BDF5-D11BDCD5FC2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pustok.Data", "Pustok.Data\Pustok.Data.csproj", "{DB238F78-768F-4AC1-BDF5-D11BDCD5FC2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pustok.Business", "Pustok.Business\Pustok.Business.csproj", "{0188F0A4-7698-4778-8267-15EF8C3C33E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pustok.Business", "Pustok.Business\Pustok.Business.csproj", "{0188F0A4-7698-4778-8267-15EF8C3C33E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pustok.MVC", "Pustok.MVC\Pustok.MVC.csproj", "{39711179-2974-4398-B040-3BBDC2AB2E2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pustok.MVC", "Pustok.MVC\Pustok.MVC.csproj", "{39711179-2974-4398-B040-3BBDC2AB2E2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

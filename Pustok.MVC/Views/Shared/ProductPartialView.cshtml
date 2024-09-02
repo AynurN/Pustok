@@ -32,13 +32,13 @@
                 </div>
                 <div class="product-card--body">
                     <div class="card-image">
-                        <img src="~/assets/image/products/@book.BookImages.FirstOrDefault(i=>i.IsPrimary==true)" alt="">
+                        <img src="~/assets/image/products/@book.BookImages?.FirstOrDefault(i=>i.IsPrimary==true)?.ImageUrl" alt="">
                         <div class="hover-contents">
                             <a href="product-details.html" class="hover-image">
-                                <img src="~/assets/image/products/@book.BookImages.FirstOrDefault(i=>i.IsPrimary==false)" alt="">
+                                <img src="~/assets/image/products/@book.BookImages?.FirstOrDefault(i=>i.IsPrimary==false)?.ImageUrl" alt="">
                             </a>
                             <div class="hover-btns">
-                                <a href="cart.html" class="single-btn">
+                                <a asp-action="addtobasket" asp-controller="home" asp-route-bookId="@book.Id" class="single-btn add-to-basket">
                                     <i class="fas fa-shopping-basket"></i>
                                 </a>
                                 <a href="wishlist.html" class="single-btn">
@@ -56,8 +56,8 @@
                     </div>
                     <div class="price-block">
                        
-                        <span class="price">@book.CostPrice*(100-@book.DisPercent)/100</span>
-                        if(@book.DisPercent>0){
+                        <span class="price">@(book.SalePrice*(100-book.DisPercent)/100)</span>
+                        @if(book.DisPercent>0){
                         <del class="price-old">@book.SalePrice</del>
                         <span class="price-discount">@book.DisPercent</span>
                         }

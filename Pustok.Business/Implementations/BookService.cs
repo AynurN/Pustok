@@ -10,6 +10,7 @@ using Pustok.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -136,10 +137,28 @@ namespace Pustok.Business.Implementations
 
         }
 
+        public async Task<ICollection<Book>> GetAllByAsync(Expression<Func<Book, bool>>? expression, params string[] includes)
+        {
+          var result=  await bookRepository.GetAll(expression, includes);
+            return await result.ToListAsync();
+        }
+
+        public async  Task<ICollection<Book>> GetAllOrderDescAsync(Expression<Func<Book, bool>>? expression, Expression<Func<Book, dynamic>> orderExpression, params string[] includes)
+        {
+            var result = await bookRepository.GetAll(expression, includes);
+            return await result.OrderByDescending(orderExpression).ToListAsync();
+        }
+
         public Task<Book> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
+
+        public async Task<bool> IsExist(Expression<Func<Book, bool>> expression)
+        {
+           return await bookRepository.entities.AnyAsync(expression);
+        }
+
 
         public Task UpdateAsync(int id, BookUpdateVM vm)
         {

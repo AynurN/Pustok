@@ -24,9 +24,10 @@ namespace Pustok.MVC
             builder.Services.AddScoped<IBookRepository, BookRepository>();
             builder.Services.AddScoped<IBookService, BookService>();
             builder.Services.AddSingleton<IWebHostEnvironment>(builder.Environment);
+            builder.Services.AddSession();
 
             var app = builder.Build();
-
+            app.UseSession();
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {

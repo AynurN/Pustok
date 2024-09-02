@@ -15,6 +15,7 @@ namespace Pustok.Core.Models
         public int DisPercent { get; set; }
         public int StockCount { get; set; }
 
+
         //relational
         public int AuthorId { get; set; }
         public Author Author { get; set; }
