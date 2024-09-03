@@ -516,3 +516,9 @@ C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Pustok.Business.dll
 C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Pustok.Business.pdb
 C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\FluentAssertions.dll
 C:\Users\user\Desktop\Pustok\Pustok.MVC\obj\Debug\net8.0\scopedcss\Views\Shared\ProductPartialView.cshtml.rz.scp.css
+C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\user\Desktop\Pustok\Pustok.MVC\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Pustok.Business.Implementations;
 using Pustok.Business.Interfaces;
 using Pustok.Core.IRepositories;
+using Pustok.Core.Models;
 using Pustok.Data.DAL;
 using Pustok.Data.Repositories;
 using System;
@@ -25,7 +27,18 @@ namespace Pustok.MVC
             builder.Services.AddScoped<IBookService, BookService>();
             builder.Services.AddSingleton<IWebHostEnvironment>(builder.Environment);
             builder.Services.AddSession();
-
+            builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
+            {
+                opt.Password.RequiredLength = 8;
+                opt.Password.RequireNonAlphanumeric = true;
+                opt.Password.RequiredUniqueChars = 3;
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireLowercase = true;
+                opt.Password.RequireUppercase=true;
+                opt.User.RequireUniqueEmail = true;
+            } )
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
             var app = builder.Build();
             app.UseSession();
             // Configure the HTTP request pipeline.
