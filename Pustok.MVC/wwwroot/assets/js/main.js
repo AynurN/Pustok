@@ -3,7 +3,7 @@
 addBasketBtns.forEach(btn => {
     btn.addEventListener("click", function (e) {
         e.preventDefault();
-        let url = this.getAttribute("href"); // Using 'this' to refer to the clicked button
+        let url = this.getAttribute("href"); 
         fetch(url)
             .then(response => {
                 if (response.ok) { 

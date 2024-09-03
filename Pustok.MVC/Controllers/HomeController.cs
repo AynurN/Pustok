@@ -28,12 +28,13 @@ namespace Pustok.MVC.Controllers
 
 
             };
-           return View(homeVM);
+            return View(homeVM);
         }
-        public async Task<IActionResult> AddToBasket(int bookId) {
-            if(bookId<1) return NotFound();
+        public async Task<IActionResult> AddToBasket(int bookId)
+        {
+            if (bookId < 1) return NotFound();
 
-            if (await bookService.IsExist(b=>b.Id==bookId)==false) return NotFound();
+            if (await bookService.IsExist(b => b.Id == bookId) == false) return NotFound();
 
 
             List<BasketItemVM> basketItemVMs = new List<BasketItemVM>();
@@ -67,11 +68,10 @@ namespace Pustok.MVC.Controllers
                 };
                 basketItemVMs.Add(basketItemVM);
             }
-             basketItemStr=JsonConvert.SerializeObject(basketItemVMs);
-            HttpContext.Response.Cookies.Append("basketItems",basketItemStr);
+            basketItemStr = JsonConvert.SerializeObject(basketItemVMs);
+            HttpContext.Response.Cookies.Append("basketItems", basketItemStr);
             return Ok();
         }
-
 
     }
 }

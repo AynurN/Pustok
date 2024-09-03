@@ -59,7 +59,7 @@
                         <span class="price">@(book.SalePrice*(100-book.DisPercent)/100)</span>
                         @if(book.DisPercent>0){
                         <del class="price-old">@book.SalePrice</del>
-                        <span class="price-discount">@book.DisPercent</span>
+                        <span class="price-discount">@book.DisPercent%</span>
                         }
                         
                     </div>

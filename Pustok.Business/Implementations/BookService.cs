@@ -149,9 +149,10 @@ namespace Pustok.Business.Implementations
             return await result.OrderByDescending(orderExpression).ToListAsync();
         }
 
-        public Task<Book> GetByIdAsync(int id)
+        public async Task<Book> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await bookRepository.GetAll(null,"BookImages","Author","Genre");
+            return await result.FirstOrDefaultAsync(b => b.Id == id);
         }
 
         public async Task<bool> IsExist(Expression<Func<Book, bool>> expression)
