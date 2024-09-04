@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Pustok.Business.Exceptions;
 using Pustok.Business.Implementations;
 using Pustok.Business.Interfaces;
@@ -9,6 +10,7 @@ namespace Pustok.MVC.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class BookController : Controller
     {
 
