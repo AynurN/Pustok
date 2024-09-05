@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Pustok.Core.Models;
-using Pustok.MVC.Areas.ViewModels;
+using Pustok.MVC.Areas.Admin.ViewModels;
+
 
 namespace Pustok.MVC.Areas.Admin.Controllers
 {
@@ -28,7 +29,12 @@ namespace Pustok.MVC.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(AdminLoginVM vm)
         {
-            AppUser appUser = null;
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Invalid Credentials");
+                return View();
+            }
+                AppUser appUser = null;
 
             appUser = await userManager.FindByNameAsync(vm.Username);
             if (appUser == null)

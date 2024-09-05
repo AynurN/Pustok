@@ -25,6 +25,7 @@ namespace Pustok.MVC
             builder.Services.AddScoped<IAuthorService, AuthorService>();
             builder.Services.AddScoped<IBookRepository, BookRepository>();
             builder.Services.AddScoped<IBookService, BookService>();
+            builder.Services.AddScoped<ILayoutService, LayoutService>();
             builder.Services.AddSingleton<IWebHostEnvironment>(builder.Environment);
             builder.Services.AddSession();
             builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
@@ -41,16 +42,17 @@ namespace Pustok.MVC
                 .AddDefaultTokenProviders();
             var app = builder.Build();
             app.UseSession();
-            // Configure the HTTP request pipeline.
+           
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                 
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
 
             app.UseRouting();
 

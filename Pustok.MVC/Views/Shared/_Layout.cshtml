@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿
+@inject ILayoutService service
+@{
+    AppUser user=null;
+    if (Context.User.Identity.IsAuthenticated)
+    {
+        user = await service.GetUser(Context.User.Identity.Name);
+    }
+}
+<!DOCTYPE html>
 <html lang="zxx">
 
 
@@ -322,12 +331,27 @@
                             <div class="main-navigation flex-lg-right">
                                 <div class="cart-widget">
                                     <div class="login-block">
-                                        <a href="login-register.html" class="font-weight-bold">Login</a> <br>
-                                        <span>or</span><a href="login-register.html">Register</a>
+                                        @if (!Context.User.Identity.IsAuthenticated)
+                                        {
+                                            <a asp-action="login" asp-controller="account" class="font-weight-bold">Login</a> <br>
+                                            <span>or</span>
+
+                                            <a asp-action="register" asp-controller="account">Register</a>
+
+                                        }
+                                        else
+                                        {
+                                            <a href="login-register.html" class="font-weight-bold">@user.Fullname</a> <br>
+                                            <span>or</span>
+
+                                            <a asp-action="logout" asp-controller="account" >Logout</a>
+                                        }
+
                                     
-                                           @await Component.InvokeAsync("Book")
+                                          
                                            
                                 </div>
+                                    @await Component.InvokeAsync("Book")
                             </div>
                         </div>
                     </div>
