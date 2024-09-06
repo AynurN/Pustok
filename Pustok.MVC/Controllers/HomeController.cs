@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Pustok.Business.Interfaces;
 using Pustok.Business.ViewModels.Home;
 using Pustok.Core.Models;
+using Pustok.Data.DAL;
 using Pustok.MVC.ViewModels;
 using System.Diagnostics;
 
@@ -11,10 +14,14 @@ namespace Pustok.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly IBookService bookService;
+        private readonly UserManager<AppUser> userManager;
+        private readonly AppDbContext context;
 
-        public HomeController(IBookService bookService)
+        public HomeController(IBookService bookService, UserManager<AppUser> userManager, AppDbContext context)
         {
             this.bookService = bookService;
+            this.userManager = userManager;
+            this.context = context;
         }
 
 
@@ -36,17 +43,35 @@ namespace Pustok.MVC.Controllers
 
             if (await bookService.IsExist(b => b.Id == bookId) == false) return NotFound();
 
+            AppUser appUser = null;
 
             List<BasketItemVM> basketItemVMs = new List<BasketItemVM>();
             BasketItemVM basketItemVM = null;
+            BasketItem basketItem = null;
             string? basketItemStr = HttpContext.Request.Cookies["basketItems"];
-            if (basketItemStr != null)
+            if (HttpContext.User.Identity.IsAuthenticated)
             {
-                basketItemVMs = JsonConvert.DeserializeObject<List<BasketItemVM>>(basketItemStr);
-                basketItemVM = basketItemVMs.FirstOrDefault(i => i.BookId == bookId);
-                if (basketItemVM != null)
+                appUser=await userManager.FindByNameAsync(HttpContext.User.Identity.Name);
+            }
+            if (appUser == null) {
+                if (basketItemStr != null)
                 {
-                    basketItemVM.Count++;
+                    basketItemVMs = JsonConvert.DeserializeObject<List<BasketItemVM>>(basketItemStr);
+                    basketItemVM = basketItemVMs.FirstOrDefault(i => i.BookId == bookId);
+                    if (basketItemVM != null)
+                    {
+                        basketItemVM.Count++;
+                    }
+                    else
+                    {
+                        basketItemVM = new BasketItemVM
+                        {
+                            BookId = bookId,
+                            Count = 1
+                        };
+                        basketItemVMs.Add(basketItemVM);
+
+                    }
                 }
                 else
                 {
@@ -56,20 +81,33 @@ namespace Pustok.MVC.Controllers
                         Count = 1
                     };
                     basketItemVMs.Add(basketItemVM);
-
                 }
+                basketItemStr = JsonConvert.SerializeObject(basketItemVMs);
+                HttpContext.Response.Cookies.Append("basketItems", basketItemStr);
             }
             else
             {
-                basketItemVM = new BasketItemVM
+                basketItem = await context.BasketItems.FirstOrDefaultAsync(b => b.BookId == bookId && b.AppUserId == appUser.Id);
+                if (basketItem != null) { 
+                 basketItem.Count++;
+                }
+                else
                 {
-                    BookId = bookId,
-                    Count = 1
-                };
-                basketItemVMs.Add(basketItemVM);
+                    basketItem = new BasketItem()
+                    {
+                        AppUserId = appUser.Id,
+                        BookId = bookId,
+                        Count = 1,
+                        IsDeleted = false,
+                        CreateDate = DateTime.Now,
+                        UpdateDate = DateTime.Now
+                    };
+                    await context.BasketItems.AddAsync(basketItem);
+                }
+                await context.SaveChangesAsync();
+
             }
-            basketItemStr = JsonConvert.SerializeObject(basketItemVMs);
-            HttpContext.Response.Cookies.Append("basketItems", basketItemStr);
+           
             return Ok();
         }
 
