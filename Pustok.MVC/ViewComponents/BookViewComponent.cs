@@ -46,7 +46,7 @@ namespace Pustok.MVC.ViewComponents
             }
             else
             {
-                List<BasketItem> basketItems = await context.BasketItems.Where(b => b.AppUserId == appUser.Id).ToListAsync();
+                List<BasketItem> basketItems = await context.BasketItems.Where(b => b.AppUserId == appUser.Id && b.IsDeleted==false).ToListAsync();
                 foreach (var item in basketItems)
                 {
                     BasketItemVM ıtemVM = new BasketItemVM

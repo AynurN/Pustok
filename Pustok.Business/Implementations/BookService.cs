@@ -152,7 +152,7 @@ namespace Pustok.Business.Implementations
         public async Task<Book> GetByIdAsync(int id)
         {
             var result = await bookRepository.GetAll(null,"BookImages","Author","Genre");
-            return await result.FirstOrDefaultAsync(b => b.Id == id);
+            return await result.FirstOrDefaultAsync(b => b.Id == id && b.IsDeleted==false);
         }
 
         public async Task<bool> IsExist(Expression<Func<Book, bool>> expression)
